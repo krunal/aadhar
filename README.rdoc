@@ -4,3 +4,9 @@
 
 This project rocks and uses MIT-LICENSE.
 
+gem 'aadhar'
+
+rake aadhar:install:migrations
+
+rake db:migrate
+
