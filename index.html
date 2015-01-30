@@ -1,66 +1,60 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Aadhar : ">
+    <title>Aadhar by krunal</title>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Aadhar</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
-
   <body>
+    <div class="wrapper">
+      <header>
+        <h1>Aadhar</h1>
+        <p></p>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/krunal/aadhar">View on GitHub</a>
+        <p class="view"><a href="https://github.com/krunal/aadhar">View the Project on GitHub <small>krunal/aadhar</small></a></p>
 
-          <h1 id="project_title">Aadhar</h1>
-          <h2 id="project_tagline"></h2>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/krunal/aadhar/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/krunal/aadhar/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
+        <ul>
+          <li><a href="https://github.com/krunal/aadhar/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/krunal/aadhar/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/krunal/aadhar">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <p>Aadhar is a rails engine to support basic token-based authentication. </p>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <p>This is Rails engine to support basic token-based authentication. </p>
-
-<p>Add following line in you Gemfile</p>
+<p>Add following lines in you Gemfile</p>
 
 <pre><code>gem 'aadhar'
 </code></pre>
 
-<p>Execute following command to instal 'aadhar' engine</p>
+<p>Execute following commands to install 'aadhar' engine</p>
 
 <pre><code>rake aadhar:install:migrations
 rake db:migrate
 </code></pre>
 
-<p>After installation following APIs will be available
-1. Registration
+<p>After installation following APIs will be available</p>
+
+<pre><code>1. Registration
 2. Login
 3. Logout
-4. Reset password</p>
+4. Reset password
+</code></pre>
       </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Aadhar maintained by <a href="https://github.com/krunal">krunal</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/krunal">krunal</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
-
+    <script src="javascripts/scale.fix.js"></script>
     
-
   </body>
 </html>
