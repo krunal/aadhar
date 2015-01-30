@@ -1,6 +1,4 @@
 class Aadhar::UsersController < ApplicationController
-  protect_from_forgery with: :null_session, :if => Proc.new { |c| c.request.format == 'application/json' }
-  #skip_before_filter :authenticate
 
   def create
   	@user = User.new(user_params)

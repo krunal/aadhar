@@ -1,5 +1,4 @@
-class Aadhar::PasswordsController < ApplicationController
-  protect_from_forgery with: :null_session, :if => Proc.new { |c| c.request.format == 'application/json' }
+class Aadhar::PasswordsController < Aadhar::ApplicationController
   before_filter :authenticate, only: [:update]
 
   def update
