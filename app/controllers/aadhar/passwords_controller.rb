@@ -31,7 +31,7 @@ class Aadhar::PasswordsController < ApplicationController
       @user.change_password = true
       @user.save
       #ResetEmailJob.set(wait: 20.seconds).perform_later(@user, @user.temp_password)
-      #UserMailer.reset_email(@user, @user.temp_password).deliver_later
+      UserMailer.reset_email(@user, @user.temp_password).deliver_later
       render :status => 200,
            :json => { :success => true,
                       :info => "Check your email",

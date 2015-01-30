@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <center>
+    <table width="580" cellspacing="0" cellpadding="0" border="0" style="font-family:arial,'lucida grande','lucida sans','lucida sans unicode',tahoma,verdana,sans-serif;background:#FFF;border:2px solid #eee;padding: 10px 0px;background-color:#fff;text-align:left;">
+      <tr>
+        <td valign="top" style="padding: 15px;font-size: 14px; color: #000000; background-color:#ffffff;">
+          Hi <%= @user.name.titleize.strip %>,
+          <p style="margin:20px 0px;"><%=  "Here are your login details." %></p>
+         
+          <p style="margin:10px 0px;color:#CC3333; font-weight: bold; font-size: 18px;"><%=  "Account Information" %></p>
+          <p style="margin:10px 0px;"><%=  "Login ID" %>: <b><%= @user.email -%></b></p>
+          <p style="margin:10px 0px;"><%=  "Password" %>: <b><%= @temp_password -%></b></p>
+          <br/>
+          <p  style="margin:20px 0px 10px 0px;">
+            <b><%=  "For questions and support:"%></b>
+          </p>
+          <p  style="margin:20px 0px 10px 0px;">
+            <%=  'To help you get started quickly with Oneclick, we encourage you to read our ' %>
+            &nbsp;
+            <a href = 'http://oneclick.com/help'>help blog</a>
+          </p>
+          <p style="margin:20px 0px 10px 0px;">
+            <%=  'Remember, you can always email us with your questions and feedback at support@oneclick.com or visit us at our contact us page for more information on support.' %>
+          </p>
+        </td>
+      </tr>
+      <tr>
+       <td style="padding: 10px 15px 15px; font-size:16px;background:#fff;">
+          <p style="margin:0px 0px;">
+             <%=  "Thanks" %>,<br>
+             The OneClick Team<br> 
+          </p>
+       </td>
+      </tr>       
+      
+    </table>
+</center>
+  </body>
+</html>

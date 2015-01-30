@@ -8,7 +8,7 @@ class Aadhar::UsersController < ApplicationController
     @user.change_password = true
     if @user.save
       #RegistrationEmailJob.set(wait: 20.seconds).perform_later(@user, @user.temp_password)
-      #UserMailer.signup_email(@user, @user.temp_password).deliver_later
+      UserMailer.signup_email(@user, @user.temp_password).deliver_later
       render :status => 200,
            :json => { :success => true,
                       :info => "Registered",
