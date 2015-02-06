@@ -1,4 +1,4 @@
-class Aadhar::SessionsController < ApplicationController
+class Aadhar::SessionsController < Aadhar::ApplicationController
 
   def create
     user = User.authenticate(params[:email], params[:password])

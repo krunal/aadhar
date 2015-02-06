@@ -1,4 +1,4 @@
-class Aadhar::UsersController < ApplicationController
+class Aadhar::UsersController < Aadhar::ApplicationController
 
   def create
   	@user = User.new(user_params)
