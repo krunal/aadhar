@@ -1,14 +1,15 @@
 class Aadhar::SessionsController < Aadhar::ApplicationController
+  before_filter :authenticate, only: [:destroy]
 
   def create
     user = User.authenticate(params[:email], params[:password])
     if user
-      user.save_token
+      authentication_token = AuthenticationToken.create_token(user)
       render :status => 200,
         :json => { :success => true,
                    :info => "Logged in",
                    :data => { 
-                     :auth_token => user.authentication_token, 
+                     :auth_token => authentication_token.token, 
                      :user => {
                        id: user.id,
                        email: user.email,
@@ -24,7 +25,8 @@ class Aadhar::SessionsController < Aadhar::ApplicationController
   end
 
   def destroy
-  	current_user.update_column(:authentication_token, nil)
+    authentication_token = AuthenticationToken.where(token: params[:auth_token], user_id: current_user.id).first
+    authentication_token.destroy
     render :status => 200,
            :json => { :success => true,
                       :info => "Logged out",

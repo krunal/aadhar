@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   validates_presence_of :name
   validates_uniqueness_of :email
 
+  has_many :authentication_tokens
+
   def self.authenticate(email, password)
     user = find_by_email(email)
     if user && user.password_hash == ::BCrypt::Engine.hash_secret(password, user.password_salt)
@@ -38,15 +40,4 @@ class User < ActiveRecord::Base
     return Array.new(password_length){||lower_alphabets[rand(lower_alphabets.size)]}.join
   end
 
-  def generate_token
-    self.authentication_token = loop do
-      random_token = SecureRandom.urlsafe_base64(nil, false)
-      break random_token unless self.class.exists?(authentication_token: random_token)
-    end
-  end
-
-  def save_token
-  	self.generate_token
-  	self.save
-  end
 end

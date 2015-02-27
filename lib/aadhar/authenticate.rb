@@ -7,7 +7,10 @@ module Aadhar
 		end
 
 	    def current_user
-	        @current_user ||= User.where(authentication_token: params[:auth_token]).first
+	        @current_user ||= begin
+	          authentication = AuthenticationToken.where(token: params[:auth_token]).first
+	          authentication.present? ? authentication.user : nil
+	        end
 	    end
 	end
 end

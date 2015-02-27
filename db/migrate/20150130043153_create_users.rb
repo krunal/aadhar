@@ -5,7 +5,6 @@ class CreateUsers < ActiveRecord::Migration
       t.string :email
       t.string :password_hash
       t.string :password_salt
-      t.string :authentication_token
       t.boolean :change_password, default: false
 
       t.timestamps null: false
