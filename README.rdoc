@@ -10,3 +10,31 @@ rake aadhar:install:migrations
 
 rake db:migrate
 
+API list
+-----------
+
+* Registration API 
+  - url - http://abc.com/users.json
+  - method - POST
+  - data - { "user": {"email":"email_id@abc.com", "name":"Krunal"} }
+  
+* Login API
+  - url - http://abc.com/sessions.json
+  - method - POST
+  - data - {"email":"email_id@abc.com","password":"avhklaz"}
+  
+* Change password
+  - url - http://abc.com/passwords.json?auth_token=SbuAeTt6ibIb2_6veWjkDA
+  - method - POST
+  - data - {"password":"xyzxyz","password_confirmation":"xyzxyz"}
+  
+* Password reset
+  - url - http://abc.com/passwords/reset
+  - method - POST
+  - data - {"email": "email_id@abc.com" }
+  
+* Logout
+  - url- http://abc.com/sessions/bKJxSkr5sbshhw5BWt8i.json?auth_token=bKJxSkr5sbshhw5BWt8i
+  - method - delete
+
+
