@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: "support@oneclick.com"
+  default from: "hello@iclickishare.com"
   layout 'aadhar/mailer'
   def signup_email(user, temp_password)
   	@user = user
