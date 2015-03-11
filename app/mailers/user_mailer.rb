@@ -4,13 +4,15 @@ class UserMailer < ActionMailer::Base
   def signup_email(user, temp_password)
   	@user = user
     @temp_password = temp_password
-    mail(to: @user.email, subject: 'OneClick Account Information')
+    @subject = 'Welcome to oneClick!'
+    mail(to: @user.email, subject: )
   end
 
   def reset_email(user, temp_password)
   	@user = user
     @temp_password = temp_password
-    mail(to: @user.email, subject: 'New password for OneClick')
+    @subject = 'Password Reset'
+    mail(to: @user.email, subject: @subject)
   end
 end
 
