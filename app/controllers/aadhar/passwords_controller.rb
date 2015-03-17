@@ -19,7 +19,7 @@ class Aadhar::PasswordsController < Aadhar::ApplicationController
     else
       render :status => 200,
              :json => { :success => false,
-                        :info => current_user.errors}
+                        :info => current_user.errors.full_messages}
     end
   end
 
