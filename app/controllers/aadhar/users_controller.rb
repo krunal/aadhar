@@ -16,7 +16,7 @@ class Aadhar::UsersController < Aadhar::ApplicationController
                           name: @user.name
                           } } }
     else
-      render :status => :unprocessable_entity,
+      render :status => 200,
              :json => { :success => false,
                         :info => @user.errors.full_messages }
     end
